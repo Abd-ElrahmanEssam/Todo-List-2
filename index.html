@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قائمة المهام اليومية | To-Do List</title>
+  <!-- خط Readex Pro لتصميم عصري مختلف -->
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="todo-app">
+    <!-- رأس التطبيق -->
+    <header class="app-header">
+      <div>
+        <h1>مهامي اليومية ✅</h1>
+        <p id="date-display" class="date-text"></p>
+      </div>
+      <div class="stats-badge">
+        متبقي: <span id="tasks-count">0</span>
+      </div>
+    </header>
+
+    <!-- فورم إضافة مهمة جديدة -->
+    <form id="todo-form" class="todo-form">
+      <input 
+        type="text" 
+        id="todo-input" 
+        placeholder="أضف مهمة جديدة... (مثلاً: مراجعة كود الجافاسكريبت)" 
+        autocomplete="off"
+        required 
+      />
+      <button type="submit" class="add-btn">إضافة +</button>
+    </form>
+
+    <!-- أزرار الفلترة -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="pending">قيد التنفيذ</button>
+      <button class="filter-btn" data-filter="completed">مكتملة</button>
+    </div>
+
+    <!-- قائمة المهام (يتم ملؤها بالجافاسكريبت) -->
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <!-- رسالة تظهر عندما تكون القائمة فارغة -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">📋</div>
+      <p>لا توجد مهام حالياً، ابدأ بإضافة مهمتك الأولى!</p>
+    </div>
+
+    <!-- تذييل التطبيق -->
+    <footer class="app-footer">
+      <button id="clear-completed" class="clear-btn">مسح المهام المكتملة 🗑️</button>
+    </footer>
+  </main>
+
+  <!-- ربط ملف الجافاسكريبت -->
+  <script src="script.js"></script>
+</body>
+</html>
